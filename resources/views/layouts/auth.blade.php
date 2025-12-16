@@ -6,16 +6,13 @@
     <title>@yield('title', config('app.name'))</title>
     <link rel="icon" type="image/png" href="{{ asset('images/kabus.png') }}">
     <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
-
-    <link href="{{ asset('css/frutiger-overrides.css') }}" rel="stylesheet">
 </head>
-<body>
-
-<main class="container">
-    <div class="card glass" style="max-width: 500px; margin: auto;">
-        @yield('content')
+<body id="top">
+    <div>
+        <main">
+            @include('components.alerts')
+            @yield('content')
+        </main>
     </div>
-</main>
-
 </body>
 </html>
