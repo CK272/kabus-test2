@@ -3,66 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name', 'Kabus') }}</title>
+    <title>@yield('title', config('app.name'))</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/kabus.png') }}">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
-<body>
-
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-content">
-                <div class="navbar-left">
-                     <a href="{{ url('/') }}" style="font-size: 24px; font-weight: bold; color: #bb86fc; text-decoration: none;">KABUS</a>
-                </div>
-                
-                <div class="navbar-right">
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="navbar-btn">Dashboard</a>
-                        
-                        <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-                            @csrf
-                            <button type="submit" class="navbar-btn navbar-btn-logout" style="border:none;">Logout</button>
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="navbar-btn">Login</a>
-                        <a href="{{ route('register') }}" class="navbar-btn">Register</a>
-                    @endauth
-                </div>
-            </div>
-        </div>
-    </nav>
-
+<body id="top" class="dark-mode">
+    @include('components.navbar')
     <div class="content-wrapper">
-        
-        <div class="left-bar">
-            <ul>
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Vendors</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-        </div>
-
-        <div class="main-content">
+        @auth
+            @include('components.left-bar')
+        @endauth
+        <main class="main-content">
+            @include('components.alerts')
             @yield('content')
-        </div>
-
-        <div class="right-bar">
-             <ul>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Wallet</a></li>
-            </ul>
-        </div>
-
+        </main>
+        @auth
+            @include('components.right-bar')
+        @endauth
     </div>
-
-    <footer class="footer">
-        <div class="footer-container">
-            &copy; {{ date('Y') }} {{ config('app.name', 'Kabus') }}. All rights reserved.
-        </div>
-    </footer>
-
+    
+    @include('components.footer')
+    
+    <a href="#top" class="scroll-button scroll-top" title="Scroll to top">▲</a>
+    <a href="#bottom" class="scroll-button scroll-bottom" title="Scroll to bottom">▼</a>
+    <div id="bottom"></div>
 </body>
 </html>
