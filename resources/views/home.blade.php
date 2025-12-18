@@ -182,7 +182,7 @@
 
     @if(count($adSlots) === 0 && count($featuredProducts) === 0)
     <div class="home-welcome-message">
-        <h1 class="home-title">Welcome to Kabus</h1>
+        <h1 class="home-title">Welcome to test marketplace</h1>
     
         <p class="home-text">Dear users,</p>
     
@@ -198,13 +198,13 @@
     
         <ul class="home-list">
             <li>Continuous updates and new feature integrations</li>
-            <li>Your contributions and suggestions are always welcome on our GitHub page (github.com/sukunetsiz/kabus)</li>
+           
         </ul>
     
         <div class="home-important">
             <strong>Security Reminder</strong>
             <p class="home-text">
-            Please use this marketplace script with caution. Despite my best efforts, there might be unfound vulnerabilities. I recommend that you do not use this script directly; instead, review and edit it according to your needs. Remember the most important rule of the internet: don't trust, verify.
+            
             </p>
         </div>
     
@@ -213,7 +213,7 @@
         </p>
     
         <div class="home-signature">
-            <p>Best regards,<br>sukunetsiz</p>
+            <p>Best regards,<br>Niko Belic</p>
         </div>
     </div>
     @endif
