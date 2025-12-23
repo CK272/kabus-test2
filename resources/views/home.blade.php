@@ -191,7 +191,7 @@
         </p>
     
         <p class="home-text">
-            Thank you for your valuable feedback during the beta phase. It has helped me enhance the platform to better meet your needs.
+            Thank you for your valuable feedback during the beta phase. 
         </p>
     
         <p class="home-text">What's Next:</p>
